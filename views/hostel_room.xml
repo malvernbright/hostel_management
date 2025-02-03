@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_hostel_room_form_view" model="ir.ui.view">
+        <field name="name">hostel.room.form.view</field>
+        <field name="model">hostel.room</field>
+        <field name="arch" type="xml">
+            <form string="Hostel Rooms">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"
+                                   placeholder="Name"/>
+                            <field name="room_number" required="1"
+                                   placeholder="Room Number"/>
+                            <field name="floor_number" placeholder="Floor number..."/>
+                            <field name="rent_amount" placeholder="Rent amount..."/>
+                            <field name="currency_id" placeholder="Currency..."/>
+                            <field name="hostel_id" placeholder="Hostel..."/>
+                        </group>
+                        <group>
+                            <field name="student_ids"/>
+                            <field name="hostel_amenities_ids"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hostel_room_tree_view" model="ir.ui.view">
+        <field name="name">hostel.room.tree.view</field>
+        <field name="model">hostel.room</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="rent_amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hostel_room_search_view" model="ir.ui.view">
+        <field name="name">Hostel Room Search</field>
+        <field name="model">hostel.room</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="currency_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hostel_room" model="ir.actions.act_window">
+        <field name="name">Hostel Room</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hostel.room</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                No Hostel room found, create one!
+            </p>
+        </field>
+    </record>
+</odoo>

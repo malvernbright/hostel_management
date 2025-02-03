@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="module_category_hostel_room" model="ir.module.category">
+            <field name="name">Hostel Rooms Management</field>
+            <field name="sequence">31</field>
+        </record>
+        <record id="group_hostel_room_manager" model="res.groups">
+            <field name="name">Hostel Rooms Manager</field>
+            <field name="category_id" ref="hostel_management.module_category_hostel_room"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+        <record id="group_hostel_room_user" model="res.groups">
+            <field name="name">Hostel Room User</field>
+            <field name="category_id" ref="hostel_management.module_category_hostel_room"/>
+        </record>
+    </data>
+</odoo>

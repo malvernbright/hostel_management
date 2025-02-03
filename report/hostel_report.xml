@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="action_book_report" model="ir.actions.report">
+            <field name="name">Hostel Report</field>
+            <field name="model">hostel.hostel</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">hostel_management.report_hostel_hostel_view</field>
+            <field name="report_file">hostel_management.report_hostel_hostel</field>
+            <field name="print_report_name">(object.name or 'Hostel Report').replace('/','_')</field>
+            <field name="binding_model_id" ref="model_hostel_hostel"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <template id="report_hostel_hostel_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h1 t-esc="doc.display_name"/>
+                                </div>
+                                <div class="col-4">
+                                    <img t-att-src="image_data_uri(doc.image)" style="max-height:100px;max-width:90%;border: 2px solid black;" alt="Hostel image"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

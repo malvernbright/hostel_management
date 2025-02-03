@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="hostel_root_menu"
+                  name="Hostels Management" sequence="10"/>
+
+        <menuitem id="hostel_type_menu"
+                  name="Hostels"
+                  parent="hostel_root_menu"
+                  action="hostel_management.action_hostel"
+                  sequence="10"/>
+
+        <!--Hostel rooms-->
+        <menuitem id="hostel_room_menu"
+                  name="Hostel Room"
+                  parent="hostel_type_menu"
+                  action="hostel_management.action_hostel_room"
+                  sequence="20"/>
+
+        <!--Hostel rooms-->
+        <menuitem id="hostel_student_menu"
+                  name="Hostel Student"
+                  parent="hostel_type_menu"
+                  action="hostel_management.action_hostel_student"
+                  sequence="30"/>
+
+        <!--Hostel rooms-->
+        <menuitem id="hostel_amenities_menu"
+                  name="Hostel Amenities"
+                  parent="hostel_type_menu"
+                  action="hostel_management.action_hostel_amenities"
+                  sequence="30"/>
+
+    </data>
+</odoo>
