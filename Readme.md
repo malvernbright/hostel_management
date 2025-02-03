@@ -2,4 +2,4 @@
 
 ## Manage Student Hostels
 
-Proudly developed on [Odoo](https://odoo.com)
+Proudly developed on ![Odoo Logo](https://odoocdn.com/openerp_website/static/src/img/assets/png/odoo_logo.png "https://odoo.com")
